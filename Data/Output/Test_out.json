@@ -1,0 +1,94 @@
+[
+    {
+        "ID": "Shanghai.Huangpu.Xujiahui",
+        "Group": [
+            {
+                "ID": "Weapons",
+                "Guarenteed": 0,
+                "Sum": 3.5,
+                "Item": [
+                    {
+                        "ID": "SMG.Uzi.1",
+                        "Guarenteed": 0,
+                        "Repetitive": false,
+                        "Contribute": 0.2
+                    },
+                    {
+                        "ID": "SMG.FN_P90.2",
+                        "Guarenteed": 0,
+                        "Repetitive": false,
+                        "Contribute": 0.1
+                    },
+                    {
+                        "ID": "Samurai.Nightmare.1",
+                        "Guarenteed": 0,
+                        "Repetitive": false,
+                        "Contribute": 0.2
+                    }
+                ]
+            },
+            {
+                "ID": "Supplies",
+                "Guarenteed": 2,
+                "Sum": 1,
+                "Item": [
+                    {
+                        "ID": "Ammo.0_75.1",
+                        "Guarenteed": 1,
+                        "Repetitive": true,
+                        "Contribute": 0.5
+                    },
+                    {
+                        "ID": "Bandage.Rapid.2",
+                        "Guarenteed": 0,
+                        "Repetitive": true,
+                        "Contribute": 0.3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ID": "London.Westminster.Soho",
+        "Group": [
+            {
+                "ID": "Weapons",
+                "Guarenteed": 0,
+                "Sum": 2,
+                "Item": [
+                    {
+                        "ID": "Magic.Dragonfire.1",
+                        "Guarenteed": 0,
+                        "Repetitive": false,
+                        "Contribute": 0.4
+                    },
+                    {
+                        "ID": "Arcane.Blade.2",
+                        "Guarenteed": 0,
+                        "Repetitive": false,
+                        "Contribute": 0.2
+                    }
+                ]
+            },
+            {
+                "ID": "Supplies",
+                "Guarenteed": 1,
+                "Sum": 1,
+                "Item": [
+                    {
+                        "ID": "Ammo.Explosive.2",
+                        "Guarenteed": 0,
+                        "Repetitive": true,
+                        "Contribute": 0.7
+                    },
+                    {
+                        "ID": "Bandage.Elixir.1",
+                        "Guarenteed": 0,
+                        "Repetitive": true,
+                        "Contribute": 0.7
+                    }
+                ]
+            }
+        ]
+    }
+]
