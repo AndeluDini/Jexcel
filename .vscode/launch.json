@@ -2,19 +2,18 @@
     "version": "0.2.0",
     "configurations": [ 
         {
-            "name": "Python: Debug Current File",
+            "name": "Python: Run jexcel",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
+            "program": "${workspaceFolder}/jexcel/__main__.py",  
             "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
             "args": [
-                // "Data/Test1/Simple_Dict_List.5.xlsx",
-                // "Data/Test1/Simple_Dict_List.5-var.2.xlsx",
-                // "Data/Test1/Simple_Dict_List.1-Complex.xlsx",
-                // "Data/Test1/ChainedList.1.xlsx",
-                // "Data/Test1/ChainedList.1-var.1.xlsx",
-                // "Data/Unconvertible/ChainedList_WithoutPrimaryKey.1.xlsx",
-                "Data/Test2/1.xlsx",
+                // "Samples/Excels1/Simple_Dict_List.5-var.2.xlsx",
+                // "Samples/Excels1/Simple_Dict_List.1-Complex.xlsx",
+                "Samples/Excels2/1.xlsx",
                 "-hr",
                 "0",
                 "-dr",
@@ -22,27 +21,16 @@
                 "-sc",
                 "0",
                 "-o",
-                "Data/Output/Test_out.json"
+                "Samples/Output/Json_Out.1.json"
             ]
         },
         {
-            "name": "Python: Run main.py",
+            "name": "Python: Run ExcelToJson",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/main.py",
+            "program": "${workspaceFolder}/editor/ExcelToJson.py",  
             "console": "integratedTerminal",
-            "args": [
-                // "Data/Test1/ChainedList.1-var.1.xlsx",
-                "Data/Test2/1.xlsx",
-                "-hr",
-                "0",
-                "-dr",
-                "-1",
-                "-sc",
-                "0",
-                "-o",
-                "Data/Output/Test_out.json"
-            ]
+            "args": []
         }
     ]
 }

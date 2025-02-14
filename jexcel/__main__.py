@@ -1,6 +1,9 @@
 import argparse
-import jexcel.core
 from pathlib import Path
+from jexcel import header as hd
+from jexcel.excel_collector import ExcelCollector
+from jexcel import core
+
 
 def main():
     
@@ -57,7 +60,7 @@ def main():
     out_path = args.output
 
     # implementation
-    result = jexcel.core.excel_to_json(excel_file, header_row, data_row, start_col)
+    result = core.excel_to_json(excel_file, header_row, data_row, start_col)
 
     # If an output path is provided, write the JSON to that file; otherwise, print to stdout
     if out_path:
