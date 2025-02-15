@@ -160,7 +160,9 @@ class ExcelCollector:
             
             if header.type == HeaderType.OBJECT:
 
-                value = self.parse_cell_value(row[header.column])
+                # value = self.parse_cell_value(row[header.column])
+                value = self.parse_cell_value(row.iloc[header.column])
+
                 # if not self.is_empty(value):
                 if value is not None:
 
@@ -224,7 +226,8 @@ class ExcelCollector:
                         value, j = self.collect(primary_ids, subdata, row, i+1, level+1)
                         
                     else:
-                        value = self.parse_cell_value(row[header.column])
+                        # value = self.parse_cell_value(row[header.column])
+                        value = self.parse_cell_value(row.iloc[header.column])
                         if not self.is_empty(value):
                             data[header.name].append(value)
                     
@@ -263,7 +266,8 @@ class ExcelCollector:
                             
                     else:
 
-                        value = self.parse_cell_value(row[header.column])
+                        # value = self.parse_cell_value(row[header.column])
+                        value = self.parse_cell_value(row.iloc[header.column])
                         if not self.is_empty(value):
 
                             if item is None:

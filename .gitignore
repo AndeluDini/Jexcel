@@ -3,6 +3,10 @@ Assets/
 CodeCollection/
 Draft/
 
+# Ignore specific files
+backup.*.*
+version.*.*
+
 # Ignore .egg-info folder
 *.egg-info/
 

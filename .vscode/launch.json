@@ -32,19 +32,19 @@
             "console": "integratedTerminal",
             "args": []
         },
-        {
-            "name": "Build .exe in /program",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "python",
-            "args": [
-                "-m",
-                "PyInstaller",
-                "--onefile",
-                "editor/ExcelToJson.py"
-            ],
-            "cwd": "${workspaceFolder}/bin",
-            "console": "integratedTerminal"
-        }
+        // {
+        //     "name": "Build .exe in /program",
+        //     "type": "debugpy",
+        //     "request": "launch",
+        //     "program": "python",
+        //     "args": [
+        //         "-m",
+        //         "PyInstaller",
+        //         "--onefile",
+        //         "../editor/ExcelToJson.py"
+        //     ],
+        //     "cwd": "${workspaceFolder}/program",
+        //     "console": "integratedTerminal"
+        // }
     ]
 }

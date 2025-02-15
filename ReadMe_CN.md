@@ -153,13 +153,13 @@
 
 ```ini
 [Paths]
-ExcelManager_ToJson = TransferList/ExcelToJson.xlsx
+ExcelManager_ToJson = ConvertList_ToJson.xlsx
 ```
 
 4. 双击 ExcelToJson.exe 运行
 
 
-实际上，你可以将 ExcelToJson.exe 和 JexcelConig.ini 复制到任何位置运行。
+实际上，你可以将 ExcelToJson.exe 和 JexcelConig.ini 和包含转换文件的 Excel 复制到任何位置运行。
 只要配置文件中正确指定了文件路径，程序就能运行。
 
 

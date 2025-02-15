@@ -153,13 +153,13 @@ See TransferList/ExcelToJson.xlsx as an example.
 
 ```ini
 [Paths]
-ExcelManager_ToJson = TransferList/ExcelToJson.xlsx
+ExcelManager_ToJson=ConvertList_ToJson.xlsx
 ```
 
 4. Double click ExcelToJson.exe
 
 
-Actually, you can copy ExcelToJson.exe plus JexcelConig.ini anywhere to run. 
+Actually, you can copy ExcelToJson.exe plus JexcelConig.ini plus your conversion-list-excel file anywhere to run. 
 As long as the files are specified correctly in config, the program should run. 
 
 

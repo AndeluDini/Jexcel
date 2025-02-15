@@ -4,36 +4,93 @@ import configparser
 import pandas as pd
 import subprocess
 
-# Load configuration from Config.ini
+def pause_exit():
+    input("Press Enter to exit...")
+    sys.exit(1)
+
+# Helper function to handle relative vs absolute paths
+def make_absolute(path_str, base_dir):
+    """
+    If path_str is already absolute, return it as-is.
+    Otherwise, join it with base_dir to form an absolute path.
+    """
+    if os.path.isabs(path_str):
+        return path_str
+    return os.path.abspath(os.path.join(base_dir, path_str))
+
+# 1. Determine the base directory where the .exe is located
+exe_base_dir = os.path.dirname(sys.executable)
+
+# 2. Read the config file (relative to exe_base_dir if needed)
+config_path = 'JexcelConfig.ini'
+config_path_abs = make_absolute(config_path, exe_base_dir)
+
+if not os.path.exists(config_path_abs):
+    print(f"Error: Configuration file '{config_path_abs}' not found.")
+    pause_exit()
+
 config = configparser.ConfigParser()
-config.read('JexcelConfig.ini')
+config.read(config_path_abs)
 
-# Get the Excel file path from the Config.ini
-excel_file_path = config['Paths']['ExcelManager_ToJson']  # Reads the path from the config file
+try:
+    excel_file_path = config['Paths']['ExcelManager_ToJson']
+except KeyError as e:
+    print(f"Error: Missing configuration for {e} in {config_path_abs}.")
+    pause_exit()
 
-# Add the parent folder to sys.path to ensure jexcel can be imported
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'jexcel')))
+# Convert excel_file_path to an absolute path
+excel_file_path_abs = make_absolute(excel_file_path, exe_base_dir)
+
+if not os.path.exists(excel_file_path_abs):
+    print(f"Error: Excel file not found at: {excel_file_path_abs}")
+    pause_exit()
+
+# Make sure Python can find jexcel (adjust as needed)
+sys.path.insert(
+    0, 
+    os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'jexcel'))
+)
 
 # Load the Excel file into a DataFrame
-df = pd.read_excel(excel_file_path)
+try:
+    df = pd.read_excel(excel_file_path_abs)
+except Exception as e:
+    print(f"Error reading Excel file: {e}")
+    pause_exit()
 
-# Function to run jexcel for each row
 def run_jexcel_for_each_row(row):
-    excel_file = row['Excel']
-    json_file = row['Json']
-    header_row = row['header_row']
-    data_row = row['data_row']
-    start_col = row['start_col']
-    
-    # Run jexcel with the given parameters using subprocess
-    subprocess.run([
-        'python', '-m', 'jexcel', excel_file, 
-        '-o', json_file,
-        '-hr', str(header_row),
-        '-dr', str(data_row),
-        '-sc', str(start_col)
-    ])
+    try:
+        # 3. Convert each path to absolute
+        excel_file = make_absolute(row['Excel'], exe_base_dir)
+        json_file = make_absolute(row['Json'], exe_base_dir)
+
+        header_row = row['header_row']
+        data_row = row['data_row']
+        start_col = row['start_col']
+
+        if not os.path.exists(excel_file):
+            print(f"Warning: Excel file for row not found: {excel_file}")
+            return
+
+        subprocess.run(
+            [
+                'python', '-m', 'jexcel',
+                excel_file, 
+                '-o', json_file,
+                '-hr', str(header_row),
+                '-dr', str(data_row),
+                '-sc', str(start_col)
+            ],
+            check=True
+        )
+
+    except subprocess.CalledProcessError as cpe:
+        print(f"Subprocess error when processing row with Excel file '{excel_file}': {cpe}")
+    except Exception as e:
+        print(f"Error processing row: {e}")
 
 # Iterate through the rows and run jexcel for each one
 for index, row in df.iterrows():
     run_jexcel_for_each_row(row)
+
+input("Processing complete. Press Enter to exit...")
