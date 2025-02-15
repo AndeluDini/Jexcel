@@ -1,6 +1,12 @@
 # Excel to JSON Converter
 
-This program can parse Excel sheets to JSON file. It is originally for providing convenience of transferring user-friendly Excel data to Unreal Engine's Data Table. You can transfer Excel data to JSON file first, and then import the JSON to UE's Data Table.
+This program can parse Excel sheets to JSON file. 
+It is originally for providing convenience of transferring user-friendly Excel data to Unreal Engine's Data Table. 
+You can transfer Excel data to JSON file first, and then import the JSON to UE's Data Table.
+
+The key idea of this program is to support singular data in each Excel cell, 
+so that we don't have to put nested ((A, B), (D, E, F)) data in one cell. 
+
 
 ## Transfer Excel to JSON: Example
 
@@ -125,6 +131,8 @@ Please see Samples to check out what can be transferred and what cannot:
 
 ### To use the program:
 
+#### Transfer multiple files
+
 1. Have an Excel file, let's say, called "ExcelToJson.xlsx"
 2. List target Excel paths and desired JSON paths. Let's call it "router"
 
@@ -141,14 +149,25 @@ Parameters:
 
 See TransferList/ExcelToJson.xlsx as an example.
 
-3. In Config.ini, specify whether the "router" is in Config.ini. For example:
+3. In JexcelConfig.ini, specify whether the "router" is in JexcelConfig.ini. For example:
 
 ```ini
 [Paths]
 ExcelManager_ToJson = TransferList/ExcelToJson.xlsx
 ```
 
-4. Double click ExcelToJson.bat
+4. Double click ExcelToJson.exe
+
+
+Actually, you can copy ExcelToJson.exe plus JexcelConig.ini anywhere to run. 
+As long as the files are specified correctly in config, the program should run. 
+
+
+#### Make a single transfer 
+
+To do this, you need to install python, and install pandas. 
+Please follow the configuration of "Python: Run jexcel" in .vscode/launch.json to run python command.
+
 
 ### Source Excel File Format
 
@@ -174,6 +193,8 @@ will form a dict like:
 There are two kinds of lists:
 1. Lists with object content
 2. Lists with dict content
+
+It is free place list content in a new line out of its parent. 
 
 ##### Case 1: Object content
 
@@ -210,6 +231,7 @@ will form:
 ```
 
 For this kind of list, it is HIGHLY suggested to have an "identity" column, either for the list itself or for its content.
+A list's content without identity will be all collected as one integrity (See Samples/Unconvertible/ChainedList_WithoutPrimaryKey.1.xlsx)
 
 ### Cell Values
 

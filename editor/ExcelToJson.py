@@ -6,7 +6,7 @@ import subprocess
 
 # Load configuration from Config.ini
 config = configparser.ConfigParser()
-config.read('Config.ini')
+config.read('JexcelConfig.ini')
 
 # Get the Excel file path from the Config.ini
 excel_file_path = config['Paths']['ExcelManager_ToJson']  # Reads the path from the config file
