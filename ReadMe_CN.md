@@ -1,16 +1,16 @@
-# Excel to JSON Converter
+# Excel 转 JSON 转换器
 
-This program can parse Excel sheets to JSON file. 
-It is originally for providing convenience of transferring user-friendly Excel data to Unreal Engine's Data Table. 
-You can convert Excel data to JSON file first, and then import the JSON to UE's Data Table.
+本程序可以将 Excel 表格转换为 JSON 文件。
+它最初是为了方便将用户友好的 Excel 数据转换到虚幻引擎的数据表（Data Table）而开发的。
+你可以先将 Excel 数据转换为 JSON 文件，然后将 JSON 导入到虚幻引擎的数据表中。
 
-The key idea of this program is to support singular data in each Excel cell, 
-so that we don't have to put nested ((A, B), (D, E, F)) data in one cell. 
+本程序的核心理念是支持在每个 Excel 单元格中放置单一数据，
+这样我们就不需要在一个单元格中放置嵌套数据（如 ((A, B), (D, E, F))）。
 
 
-## Convert Excel to JSON: Example
+## Excel 转 JSON：示例
 
-### Source Excel Table:
+### 源 Excel 表格：
 
 | ID | +Group | ##ID | ##Guarenteed | ##Sum | ++Item | ###ID | ###Guarenteed | ###Repetitive | ###Contribute |
 |----|--------|------|--------------|-------|---------|--------|---------------|---------------|---------------|
@@ -24,7 +24,7 @@ so that we don't have to put nested ((A, B), (D, E, F)) data in one cell.
 | | | Supplies | 1 | 1 | | Ammo.Explosive.2 | 0 | TRUE | 0.7 |
 | | | | | | | Bandage.Elixir.1 | 0 | TRUE | 0.7 |
 
-### Output JSON:
+### 输出 JSON：
 
 ```json
 [
@@ -123,18 +123,18 @@ so that we don't have to put nested ((A, B), (D, E, F)) data in one cell.
 ]
 ```
 
-Please see Samples to check out what can be transferred and what cannot:
-* Excel files in Excels1, Excels2 show positive examples
-* Excel files in Unconvertible show negatives
+请查看示例文件夹了解哪些可以转换，哪些不能转换：
+* Excels1、Excels2 文件夹中的 Excel 文件展示了正面示例
+* Unconvertible 文件夹中的 Excel 文件展示了负面示例
 
-## Convert Excel to JSON: How to Use
+## Excel 转 JSON：使用方法
 
-### To use the program:
+### 程序使用方法：
 
-#### Transfer multiple files
+#### 转换多个文件
 
-1. Have an Excel file, let's say, called "ExcelToJson.xlsx"
-2. List target Excel paths and desired JSON paths. Let's call it "router"
+1. 准备一个 Excel 文件，比如命名为 "ExcelToJson.xlsx"
+2. 列出目标 Excel 路径和期望的 JSON 路径。我们称之为"路由表"
 
 | Excel | Json | header_row | data_row | start_col |
 |-------|------|------------|-----------|------------|
@@ -142,51 +142,51 @@ Please see Samples to check out what can be transferred and what cannot:
 | D:\PythonProjects\TestExcelToJson\Excel\ChainedList.1.xlsx | D:\PythonProjects\TestExcelToJson\New\2.json | 0 | -1 | 0 |
 | D:\PythonProjects\TestExcelToJson\Excel\Simple_Dict_List.2.xlsx | D:\PythonProjects\TestExcelToJson\New\3.json | 0 | -1 | 0 |
 
-Parameters:
-- header_row: row of header
-- data_row: row of starting data, -1 means just after header_row
-- start_col: col of starting data
+参数说明：
+- header_row：表头所在行
+- data_row：数据起始行，-1 表示紧接在表头行之后
+- start_col：数据起始列
 
-See TransferList/ExcelToJson.xlsx as an example.
+参考 TransferList/ExcelToJson.xlsx 作为示例。
 
-3. In JexcelConfig.ini, specify whether the "router" is in JexcelConfig.ini. For example:
+3. 在 JexcelConfig.ini 中指定"路由表"的位置。例如：
 
 ```ini
 [Paths]
 ExcelManager_ToJson = TransferList/ExcelToJson.xlsx
 ```
 
-4. Double click ExcelToJson.exe
+4. 双击 ExcelToJson.exe 运行
 
 
-Actually, you can copy ExcelToJson.exe plus JexcelConig.ini anywhere to run. 
-As long as the files are specified correctly in config, the program should run. 
+实际上，你可以将 ExcelToJson.exe 和 JexcelConig.ini 复制到任何位置运行。
+只要配置文件中正确指定了文件路径，程序就能运行。
 
 
-#### Make a single transfer 
+#### 进行单次转换
 
-To do this, you need to install python, and install pandas. 
-Please follow the configuration of "Python: Run jexcel" in .vscode/launch.json to run python command.
-
-
-### Source Excel File Format
-
-This program can convert Excel data into nested json data: 
-one row or multiple rows represent an integrity of a json dict.
-
-To achieve that, a concept of "level" in headers is introduced. 
-You can use a prefix of '#' to denote a dict of a header and a prefix of '+' of list.
-
-The level of a column without prefix is 0，and that with prefixes is num of prefixes - 1. 
+要进行单次转换，你需要安装 Python 和 pandas。
+请按照 .vscode/launch.json 中 "Python: Run jexcel" 的配置来运行 Python 命令。
 
 
-#### Use '#' to denote a dict
+### 源 Excel 文件格式
+
+本程序可以将 Excel 数据转换为嵌套的 JSON 数据：
+一行或多行数据表示一个完整的 JSON 字典。
+
+为了实现这一点，引入了表头"级别"的概念。
+你可以使用 '#' 前缀来表示表头的字典，使用 '+' 前缀表示列表。
+
+没有前缀的列级别为 0，带前缀的列级别为前缀数量减 1。
+
+
+#### 使用 '#' 表示字典
 
 ```
 #Person  ##FirstName  ##LastName
 ```
 
-will form a dict like:
+将形成如下字典：
 
 ```json
 {
@@ -197,15 +197,15 @@ will form a dict like:
 }
 ```
 
-#### Use '+' to denote a list
+#### 使用 '+' 表示列表
 
-There are two kinds of lists:
-1. Lists with object content
-2. Lists with dict content
+有两种类型的列表：
+1. 包含对象内容的列表
+2. 包含字典内容的列表
 
-It is free place list content in a new line out of its parent. 
+可以自由地在父级之外的新行中放置列表内容。
 
-##### Case 1: Object content
+##### 情况 1：对象内容
 
 | +Pets |
 |-------|
@@ -213,7 +213,7 @@ It is free place list content in a new line out of its parent.
 | Hamster |
 | Dog |
 
-will form:
+将形成：
 
 ```json
 {
@@ -221,14 +221,14 @@ will form:
 }
 ```
 
-##### Case 2: Dict content
+##### 情况 2：字典内容
 
 | +Date | ##Year | ##Month |
 |-------|---------|---------|
 | | 2012 | Jan |
 | | 2022 | Feb |
 
-will form:
+将形成：
 
 ```json
 {
@@ -239,20 +239,20 @@ will form:
 }
 ```
 
-For this kind of list, it is HIGHLY suggested to have an "identity" column, either for the list itself or for its content.
-A list's content without identity will be all collected as one integrity (See Samples/Unconvertible/ChainedList_WithoutPrimaryKey.1.xlsx)
+对于这种类型的列表，强烈建议为列表本身或其内容设置一个"标识"列。
+没有标识的列表内容将被全部收集为一个整体（参见 Samples/Unconvertible/ChainedList_WithoutPrimaryKey.1.xlsx）
 
-### Cell Values
+### 单元格值
 
-Currently, these data types can be parsed:
-- Integer
-- Float (must be like 1.0)
-- Boolean (must be TRUE, True, or true)
-- String
+目前支持解析以下数据类型：
+- 整数
+- 浮点数（必须形如 1.0）
+- 布尔值（必须是 TRUE、True 或 true）
+- 字符串
 
 
-# Future Plan
+# 未来计划
 
-- Apply more approaches of header specification 
-- Support modifying existing excel from json 
-- Supoort specifying which sheet to include or exclude 
+- 应用更多的表头规范方法
+- 支持从 JSON 修改现有的 Excel
+- 支持设置包含或去掉哪些表单
