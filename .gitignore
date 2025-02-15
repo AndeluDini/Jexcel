@@ -2,3 +2,9 @@
 Assets/
 CodeCollection/
 Draft/
+
+# Ignore .egg-info folder
+*.egg-info/
+
+# ignore temp .xlsx files 
+~$*.xlsx

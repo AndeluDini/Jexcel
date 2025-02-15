@@ -1,0 +1,52 @@
+[
+    {
+        "ID": "Sword.Aeolia.StoneHeart",
+        "Rank": 5,
+        "Properties": {
+            "Weight": 25.2,
+            "SpaceSize": {
+                "X": 1,
+                "Y": 3
+            }
+        },
+        "VALUE": [
+            {
+                "Area": "Aeolia",
+                "Gold": 200
+            },
+            {
+                "Area": "Talia",
+                "Gold": 300
+            }
+        ],
+        "Enchants": [
+            "Fire.Burn.Shing",
+            "Speed.Trigger.Random",
+            "Strength.Stable.Default"
+        ]
+    },
+    {
+        "ID": "Bow.Talia",
+        "Rank": 3,
+        "Properties": {
+            "Weight": 15.4,
+            "SpaceSize": {
+                "X": 2,
+                "Y": 4
+            }
+        },
+        "VALUE": [
+            {
+                "Area": "Aeolia",
+                "Gold": 90
+            },
+            {
+                "Area": "Talia",
+                "Gold": 60
+            }
+        ],
+        "Enchants": [
+            "Ice.Slow.Attack"
+        ]
+    }
+]

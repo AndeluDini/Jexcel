@@ -171,6 +171,15 @@ Please follow the configuration of "Python: Run jexcel" in .vscode/launch.json t
 
 ### Source Excel File Format
 
+This program can convert Excel data into nested json data: 
+one row or multiple rows represent an integrity of a json dict.
+
+To achieve that, a concept of "level" in headers is introduced. 
+You can use a prefix of '#' to denote a dict of a header and a prefix of '+' of list.
+
+The level of a column without prefix is 0，and that with prefixes is num of prefixes - 1. 
+
+
 #### Use '#' to denote a dict
 
 ```
@@ -240,6 +249,7 @@ Currently, these data types can be parsed:
 - Float (must be like 1.0)
 - Boolean (must be TRUE, True, or true)
 - String
+
 
 # Future Plan
 

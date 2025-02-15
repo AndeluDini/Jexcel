@@ -1,0 +1,111 @@
+[
+    {
+        "ID": "Sword.Aeolia.StoneHeart",
+        "Rank": 5,
+        "Properties": {
+            "Weight": 25.2,
+            "SpaceSize": {
+                "X": 1,
+                "Y": 3
+            }
+        },
+        "VALUE": [
+            {
+                "Area": "Aeolia",
+                "Gold": 200
+            },
+            {
+                "Area": "Talia",
+                "Gold": 300
+            }
+        ],
+        "Enchants": [
+            "Fire.Burn.Shing",
+            "Speed.Trigger.Random",
+            "Strength.Stable.Default"
+        ],
+        "History": {
+            "Owner": [
+                {
+                    "Name": "Diablo.Evil",
+                    "Level": 12,
+                    "Events": [
+                        {
+                            "Year": 762,
+                            "Achievement": "King.Aeolia"
+                        },
+                        {
+                            "Year": 771,
+                            "Achievement": "Challenge.God"
+                        },
+                        {
+                            "Year": 772,
+                            "Achievement": "Died"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Leo.Human",
+                    "Level": 9,
+                    "Events": [
+                        {
+                            "Year": 872,
+                            "Achievement": "Knight.Kingdom"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "ID": "Bow.Talia",
+        "Rank": 3,
+        "Properties": {
+            "Weight": 15.4,
+            "SpaceSize": {
+                "X": 2,
+                "Y": 4
+            }
+        },
+        "VALUE": [
+            {
+                "Area": "Aeolia",
+                "Gold": 90
+            },
+            {
+                "Area": "Talia",
+                "Gold": 60
+            }
+        ],
+        "Enchants": [
+            "Ice.Slow.Attack"
+        ],
+        "History": {
+            "Owner": [
+                {
+                    "Name": "Diablo.Light",
+                    "Level": 11,
+                    "Events": []
+                },
+                {
+                    "Name": "Dragon.Holy",
+                    "Level": 13,
+                    "Events": [
+                        {
+                            "Year": 231,
+                            "Achievement": "Lord.Wealth"
+                        },
+                        {
+                            "Year": 920,
+                            "Achievement": "God.Wealth"
+                        },
+                        {
+                            "Year": 1221,
+                            "Achievement": "Next.World"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

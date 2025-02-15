@@ -1,0 +1,132 @@
+[
+    {
+        "ID": 10001,
+        "Level_0_List_1": [
+            {
+                "Name": "Dora",
+                "Level_1_List_1": [
+                    {
+                        "Name": "Apple",
+                        "Tag": "Good"
+                    },
+                    {
+                        "Name": "Juice",
+                        "Tag": "Very Good"
+                    }
+                ],
+                "Level_1_List_2": [
+                    {
+                        "Name": "Dog",
+                        "Tag": 5,
+                        "Level_2_List_1": [
+                            {
+                                "Level_3_Dict_1": {
+                                    "Year": 2011,
+                                    "Tag": "New Start"
+                                }
+                            },
+                            {
+                                "Level_3_Dict_1": {
+                                    "Year": 2022,
+                                    "Tag": "Middle"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Cat",
+                        "Tag": 4,
+                        "Level_2_List_1": [
+                            {
+                                "Level_3_Dict_1": {
+                                    "Year": 2011,
+                                    "Tag": "Middle"
+                                }
+                            },
+                            {
+                                "Level_3_Dict_1": {
+                                    "Year": 2015,
+                                    "Tag": "End"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "Level_1_List_3": [
+                    "Item1",
+                    "Item2",
+                    "Item3"
+                ]
+            }
+        ]
+    },
+    {
+        "ID": 10002,
+        "Level_0_List_1": [
+            {
+                "Name": "Sim",
+                "Level_1_List_1": [
+                    {
+                        "Name": "Coffee",
+                        "Tag": "Hot"
+                    },
+                    {
+                        "Name": "Juice",
+                        "Tag": "Bad"
+                    }
+                ],
+                "Level_1_List_2": [
+                    {
+                        "Name": "Rat",
+                        "Tag": 2,
+                        "Level_2_List_1": []
+                    },
+                    {
+                        "Name": "Dog",
+                        "Tag": 6,
+                        "Level_2_List_1": []
+                    }
+                ],
+                "Level_1_List_3": [
+                    "Item2"
+                ]
+            },
+            {
+                "Name": "Paul",
+                "Level_1_List_1": [
+                    {
+                        "Name": "Water",
+                        "Tag": "Pure"
+                    },
+                    {
+                        "Name": "Apple",
+                        "Tag": "Sweet"
+                    }
+                ],
+                "Level_1_List_2": [
+                    {
+                        "Name": "Rabit",
+                        "Tag": 7,
+                        "Level_2_List_1": [
+                            {
+                                "Level_3_Dict_1": {
+                                    "Year": 2007,
+                                    "Tag": "Friend"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Hamster",
+                        "Tag": 8,
+                        "Level_2_List_1": []
+                    }
+                ],
+                "Level_1_List_3": [
+                    "Item3",
+                    "Item4"
+                ]
+            }
+        ]
+    }
+]
