@@ -1,2 +1,2 @@
-In this folder (Jexcel/program), run: pyinstaller --onefile ../editor/ExcelToJson.py
+In this folder (Jexcel/program), run: pyinstaller ExcelToJson.spec
 Then copy the .exe in dist folder to Jexcel.

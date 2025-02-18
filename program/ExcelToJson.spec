@@ -3,7 +3,7 @@
 
 a = Analysis(
     ['..\\editor\\ExcelToJson.py'],
-    pathex=[],
+    pathex=['..\\editor', '..\\jexcel'],
     binaries=[],
     datas=[],
     hiddenimports=[],
