@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>modulegraph cross reference for ExcelToJson.py, pyi_rth_inspect.py, pyi_rth_multiprocessing.py, pyi_rth_pkgres.py, pyi_rth_pkgutil.py, pyi_rth_setuptools.py</title>
+    <title>modulegraph cross reference for ExcelToJson.py, pyi_rth_inspect.py, pyi_rth_multiprocessing.py, pyi_rth_pkgres.py, pyi_rth_pkgutil.py, pyi_rth_setuptools.py, runtime_hook_jexcel.py</title>
     <style>
       .node { padding: 0.5em 0 0.5em; border-top: thin grey dotted; }
       .moduletype { font: smaller italic }
@@ -11,7 +11,7 @@
     </style>
   </head>
   <body>
-    <h1>modulegraph cross reference for ExcelToJson.py, pyi_rth_inspect.py, pyi_rth_multiprocessing.py, pyi_rth_pkgres.py, pyi_rth_pkgutil.py, pyi_rth_setuptools.py</h1>
+    <h1>modulegraph cross reference for ExcelToJson.py, pyi_rth_inspect.py, pyi_rth_multiprocessing.py, pyi_rth_pkgres.py, pyi_rth_pkgutil.py, pyi_rth_setuptools.py, runtime_hook_jexcel.py</h1>
 
 <div class="node">
   <a name="ExcelToJson.py"></a>
@@ -152,6 +152,11 @@ imports:
  &#8226;   <a href="#genericpath">genericpath</a>
  &#8226;   <a href="#heapq">heapq</a>
  &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#jexcel">jexcel</a>
+ &#8226;   <a href="#jexcel.__main__">jexcel.__main__</a>
+ &#8226;   <a href="#jexcel.core">jexcel.core</a>
+ &#8226;   <a href="#jexcel.excel_collector">jexcel.excel_collector</a>
+ &#8226;   <a href="#jexcel.header">jexcel.header</a>
  &#8226;   <a href="#keyword">keyword</a>
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
@@ -171,6 +176,7 @@ imports:
  &#8226;   <a href="#re._constants">re._constants</a>
  &#8226;   <a href="#re._parser">re._parser</a>
  &#8226;   <a href="#reprlib">reprlib</a>
+ &#8226;   <a href="#runtime_hook_jexcel.py">runtime_hook_jexcel.py</a>
  &#8226;   <a href="#sre_compile">sre_compile</a>
  &#8226;   <a href="#sre_constants">sre_constants</a>
  &#8226;   <a href="#sre_parse">sre_parse</a>
@@ -269,6 +275,23 @@ imports:
     <a href="#_distutils_hack">_distutils_hack</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#setuptools">setuptools</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#ExcelToJson.py">ExcelToJson.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="runtime_hook_jexcel.py"></a>
+  <a target="code" href="///D:/PythonProjects/Jexcel/program/hooks/runtime_hook_jexcel.py" type="text/plain"><tt>runtime_hook_jexcel.py</tt></a>
+<span class="moduletype">Script</span>  <div class="import">
+imports:
+    <a href="#os">os</a>
+ &#8226;   <a href="#sys">sys</a>
 
   </div>
   <div class="import">
@@ -3096,6 +3119,7 @@ imported by:
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#jexcel.__main__">jexcel.__main__</a>
  &#8226;   <a href="#numpy.f2py.f2py2e">numpy.f2py.f2py2e</a>
  &#8226;   <a href="#pdb">pdb</a>
  &#8226;   <a href="#pickletools">pickletools</a>
@@ -9057,6 +9081,7 @@ imported by:
  &#8226;   <a href="#calendar">calendar</a>
  &#8226;   <a href="#http">http</a>
  &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#jexcel.header">jexcel.header</a>
  &#8226;   <a href="#numpy.__config__">numpy.__config__</a>
  &#8226;   <a href="#numpy._globals">numpy._globals</a>
  &#8226;   <a href="#numpy.f2py.symbolic">numpy.f2py.symbolic</a>
@@ -10905,6 +10930,110 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="jexcel"></a>
+  <a target="code" href="///D:/PythonProjects/Jexcel/jexcel/__init__.py" type="text/plain"><tt>jexcel</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#jexcel.core">jexcel.core</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#ExcelToJson.py">ExcelToJson.py</a>
+ &#8226;   <a href="#jexcel.__main__">jexcel.__main__</a>
+ &#8226;   <a href="#jexcel.core">jexcel.core</a>
+ &#8226;   <a href="#jexcel.excel_collector">jexcel.excel_collector</a>
+ &#8226;   <a href="#jexcel.header">jexcel.header</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="jexcel.__main__"></a>
+  <a target="code" href="///D:/PythonProjects/Jexcel/jexcel/__main__.py" type="text/plain"><tt>jexcel.__main__</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#argparse">argparse</a>
+ &#8226;   <a href="#jexcel">jexcel</a>
+ &#8226;   <a href="#jexcel.core">jexcel.core</a>
+ &#8226;   <a href="#jexcel.excel_collector">jexcel.excel_collector</a>
+ &#8226;   <a href="#jexcel.header">jexcel.header</a>
+ &#8226;   <a href="#pathlib">pathlib</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#ExcelToJson.py">ExcelToJson.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="jexcel.core"></a>
+  <a target="code" href="///D:/PythonProjects/Jexcel/jexcel/core.py" type="text/plain"><tt>jexcel.core</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#jexcel">jexcel</a>
+ &#8226;   <a href="#jexcel.excel_collector">jexcel.excel_collector</a>
+ &#8226;   <a href="#jexcel.header">jexcel.header</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#pandas">pandas</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#ExcelToJson.py">ExcelToJson.py</a>
+ &#8226;   <a href="#jexcel">jexcel</a>
+ &#8226;   <a href="#jexcel.__main__">jexcel.__main__</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="jexcel.excel_collector"></a>
+  <a target="code" href="///D:/PythonProjects/Jexcel/jexcel/excel_collector.py" type="text/plain"><tt>jexcel.excel_collector</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#jexcel">jexcel</a>
+ &#8226;   <a href="#jexcel.header">jexcel.header</a>
+ &#8226;   <a href="#pandas">pandas</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#ExcelToJson.py">ExcelToJson.py</a>
+ &#8226;   <a href="#jexcel.__main__">jexcel.__main__</a>
+ &#8226;   <a href="#jexcel.core">jexcel.core</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="jexcel.header"></a>
+  <a target="code" href="///D:/PythonProjects/Jexcel/jexcel/header.py" type="text/plain"><tt>jexcel.header</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#enum">enum</a>
+ &#8226;   <a href="#jexcel">jexcel</a>
+ &#8226;   <a href="#re">re</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#ExcelToJson.py">ExcelToJson.py</a>
+ &#8226;   <a href="#jexcel.__main__">jexcel.__main__</a>
+ &#8226;   <a href="#jexcel.core">jexcel.core</a>
+ &#8226;   <a href="#jexcel.excel_collector">jexcel.excel_collector</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="jnius"></a>
   <a target="code" href="" type="text/plain"><tt>jnius</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
@@ -10930,6 +11059,7 @@ imports:
 imported by:
     <a href="#dateutil.zoneinfo">dateutil.zoneinfo</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
+ &#8226;   <a href="#jexcel.core">jexcel.core</a>
  &#8226;   <a href="#json.decoder">json.decoder</a>
  &#8226;   <a href="#json.encoder">json.encoder</a>
  &#8226;   <a href="#json.scanner">json.scanner</a>
@@ -23997,6 +24127,7 @@ imported by:
  &#8226;   <a href="#pyi_rth_setuptools.py">pyi_rth_setuptools.py</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#runpy">runpy</a>
+ &#8226;   <a href="#runtime_hook_jexcel.py">runtime_hook_jexcel.py</a>
  &#8226;   <a href="#setuptools">setuptools</a>
  &#8226;   <a href="#setuptools._core_metadata">setuptools._core_metadata</a>
  &#8226;   <a href="#setuptools._distutils._msvccompiler">setuptools._distutils._msvccompiler</a>
@@ -24639,6 +24770,8 @@ imports:
   <div class="import">
 imported by:
     <a href="#ExcelToJson.py">ExcelToJson.py</a>
+ &#8226;   <a href="#jexcel.core">jexcel.core</a>
+ &#8226;   <a href="#jexcel.excel_collector">jexcel.excel_collector</a>
  &#8226;   <a href="#pandas">pandas</a>
  &#8226;   <a href="#pandas._config">pandas._config</a>
  &#8226;   <a href="#pandas._libs">pandas._libs</a>
@@ -36778,6 +36911,7 @@ imported by:
  &#8226;   <a href="#importlib.resources._common">importlib.resources._common</a>
  &#8226;   <a href="#importlib.resources.abc">importlib.resources.abc</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
+ &#8226;   <a href="#jexcel.__main__">jexcel.__main__</a>
  &#8226;   <a href="#numpy">numpy</a>
  &#8226;   <a href="#numpy.f2py._backends._meson">numpy.f2py._backends._meson</a>
  &#8226;   <a href="#numpy.f2py.crackfortran">numpy.f2py.crackfortran</a>
@@ -37830,6 +37964,7 @@ imported by:
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#ipaddress">ipaddress</a>
+ &#8226;   <a href="#jexcel.header">jexcel.header</a>
  &#8226;   <a href="#json.decoder">json.decoder</a>
  &#8226;   <a href="#json.encoder">json.encoder</a>
  &#8226;   <a href="#json.scanner">json.scanner</a>
@@ -43355,6 +43490,7 @@ imported by:
  &#8226;   <a href="#quopri">quopri</a>
  &#8226;   <a href="#re._compiler">re._compiler</a>
  &#8226;   <a href="#runpy">runpy</a>
+ &#8226;   <a href="#runtime_hook_jexcel.py">runtime_hook_jexcel.py</a>
  &#8226;   <a href="#selectors">selectors</a>
  &#8226;   <a href="#setuptools">setuptools</a>
  &#8226;   <a href="#setuptools._distutils">setuptools._distutils</a>
